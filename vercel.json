@@ -1,7 +1,7 @@
 {
   "version": 2,
   "env": {
-    "MONGODB_URI": "@mongodb-uri",
+    "MONGODB_URI": "@mongodb-hits",
     "IS_LOCAL": "false"
   },
   "builds": [
