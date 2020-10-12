@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "env": {
+    "MONGODB_URI": "@mongodb-uri",
+    "IS_LOCAL": "false"
+  },
+  "builds": [
+    { "src": "index.js", "use": "@vercel/node" },
+    { "src": "*.html", "use": "@vercel/static" }
+  ],
+  "routes": [
+    {
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "OPTIONS",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+      },
+      "src": "/(.*)",
+      "dest": "/index.js",
+      "methods": ["OPTIONS"]
+    },
+    {
+      "src": "^(.(?!.*.css$|.*.html))*$",
+      "dest": "/index.js",
+      "methods": ["GET"]
+    },
+    {
+      "src": "/",
+      "dest": "/index.html",
+      "methods": ["GET"]
+    }
+  ]
+}
