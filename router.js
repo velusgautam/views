@@ -37,7 +37,7 @@ router.get('/*.svg', async (req, res) => {
     font-family="Verdana,Geneva,sans-serif"
     font-size="10"
   >
-    <text x="17" y="14">Views</text>
+    <text x="18" y="14">Views</text>
     <text x="64" y="14">${views.count}</text>
   </g>
 </svg>`);
