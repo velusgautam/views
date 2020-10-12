@@ -41,7 +41,7 @@ connectWithRetry();
 
 app.use(router);
 
-if (process.env.IS_LOCAL) {
+if (process.env.IS_LOCAL === 'true') {
   app.listen(3200, () => console.log(`Example app listening on port ${3200}!`));
 }
 

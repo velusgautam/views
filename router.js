@@ -45,7 +45,7 @@ router.get('/*.svg', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
-if (process.env.IS_LOCAL) {
+if (process.env.IS_LOCAL === 'true') {
   router.get('/*', async (req, res) => {
     res.writeHead(200, { 'content-type': 'text/html' });
     fs.createReadStream('index.html').pipe(res);

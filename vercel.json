@@ -19,14 +19,15 @@
       "dest": "/index.js",
       "methods": ["OPTIONS"]
     },
-    {
-      "src": "^(.(?!.*.css$|.*.html))*$",
-      "dest": "/index.js",
-      "methods": ["GET"]
-    },
+
     {
       "src": "/",
       "dest": "/index.html",
+      "methods": ["GET"]
+    },
+    {
+      "src": ".*.svg",
+      "dest": "/index.js",
       "methods": ["GET"]
     }
   ]
