@@ -6,7 +6,7 @@ const fs = require('fs');
 
 router.get('/*.svg', async (req, res) => {
   // console.log(new URL(req.url));
-  console.log('host', req.headers.referer);
+  console.log('host', req.headers);
   //   console.log(counter);
   const url = path.join(req.headers.host, req.path);
 

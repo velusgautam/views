@@ -6,6 +6,8 @@ const cors = require('cors');
 const app = express();
 const router = require('./router.js');
 
+console.log(process.env.IS_LOCAL);
+
 // const counter = {};
 // let CORS_SITES = ['https://www.hectane.com', 'https://hectane.com', 'https://admin.hectane.com', /\.velusgautam.vercel\.app$/];
 // if (process.env.IS_LOCAL === 'true') {
