@@ -5,7 +5,7 @@ const Views = require('./views/views.model');
 const fs = require('fs');
 
 router.get('/*.svg', async (req, res) => {
-  // console.log('host', req.headers);
+  console.log('host', req.headers);
   if (
     (req.headers.via &&
       req.headers.via.includes('github-camo') &&
