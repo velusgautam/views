@@ -15,6 +15,10 @@ router.get('/*.svg', async (req, res) => {
       req.headers['sec-fetch-site'] === 'same-origin' &&
       req.headers.referer &&
       req.headers.referer === 'https://views.hectane.com/') ||
+    (req.headers['sec-fetch-site'] &&
+      req.headers['sec-fetch-site'] === 'cross-site' &&
+      req.headers.referer &&
+      req.headers.referer === 'https://www.npmjs.com/') ||
     process.env.IS_LOCAL === 'true'
   ) {
     const url = path.join(req.headers.host, req.path);
