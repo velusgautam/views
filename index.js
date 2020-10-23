@@ -6,13 +6,15 @@ const cors = require('cors');
 const app = express();
 const router = require('./router.js');
 
-console.log(process.env.IS_LOCAL);
-
-// const counter = {};
-// let CORS_SITES = ['https://www.hectane.com', 'https://hectane.com', 'https://admin.hectane.com', /\.velusgautam.vercel\.app$/];
-// if (process.env.IS_LOCAL === 'true') {
-CORS_SITES = '*';
-// }
+let CORS_SITES = [
+  'https://www.views.hectane.com',
+  'https://github-camo.com',
+  'https://github.com',
+  /\.velusgautam.vercel\.app$/,
+];
+if (process.env.IS_LOCAL === 'true') {
+  CORS_SITES = '*';
+}
 app.use(
   cors({
     origin: CORS_SITES,

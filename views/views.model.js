@@ -3,7 +3,11 @@ const Schema = mongoose.Schema;
 mongoose.set('useFindAndModify', false);
 const viewsSchema = new Schema(
   {
-    url: String,
+    url: {
+      type: String,
+      required: true,
+      index: { unique: true },
+    },
     count: { type: Number, default: 1 },
   },
   { collection: 'views' }
